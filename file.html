@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Stock Market Analyzer</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="file1" accept=".csv, .xlsx" required>
+        <input type="file" id="file2" accept=".csv, .xlsx" required>
+        <button type="submit">Analyze</button>
+    </form>
+    <div id="results"></div>
+    <script src="script.js"></script>
+</body>
+</html>

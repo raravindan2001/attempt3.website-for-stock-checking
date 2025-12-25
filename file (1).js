@@ -1,0 +1,17 @@
+document.getElementById('upload-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const response = await fetch('/upload', {
+        method: 'POST',
+        body: formData
+    });
+    const result = await response.json();
+    displayResults(result);
+});
+
+function displayResults({ topGainers, topLosers }) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `<h2>Top 10 Gainers</h2><ul>${topGainers.map(g => `<li>${g[0]}: ${g[1]}</li>`).join('')}</ul>
+                            <h2>Top 10 Losers</h2><ul>${topLosers.map(l => `<li>${l[0]}: ${l[1]}</li>`).join('')}</ul>`;
+}
